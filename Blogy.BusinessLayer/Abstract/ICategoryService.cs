@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Blogy.DataAccessLayer.Abstract
+namespace Blogy.BusinessLayer.Abstract
 {
-    public interface ICategoryDal : IGenericDal<Category>
+    public interface ICategoryService:IGenericService<Category>
     {
-        int GetCategoryCount ();
+        int TGetCategoryCount ();
     }
 }
