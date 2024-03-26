@@ -1,0 +1,31 @@
+﻿@model CreateRegisterViewModel
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<div class="container">
+    <form method="post">
+        <br />
+        <br />
+        <label>Name</label>
+        <br />
+        <input type="text" class="form-control" asp-for="Name" />
+        <label>Surname</label>
+        <br />
+        <input type="text" class="form-control" asp-for="Surname" />
+        <label>Username</label>
+        <br />
+        <input type="text" class="form-control" asp-for="Username" />
+        <label>Password</label>
+        <br />
+        <input type="text" class="form-control" asp-for="Password" />
+        <label>Email</label>
+        <br />
+        <input type="text" class="form-control" asp-for="Email" />
+        <br />
+        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+        <br />
+        <button class="btn btn-primary">Sign up</button>
+    </form>
+</div>
