@@ -1,0 +1,65 @@
+﻿﻿@{
+    Layout = null;
+}
+
+<!-- /*
+* Template Name: Blogy
+* Template Author: Untree.co
+* Template URI: https://untree.co/
+* License: https://creativecommons.org/licenses/by/3.0/
+*/ -->
+<!doctype html>
+
+<html lang="en">
+@await Component.InvokeAsync("BlogListHeadComponentPartial")
+<body>
+
+    @await Component.InvokeAsync("BlogListNavbarComponentPartial")
+
+    @await Component.InvokeAsync("BlogDetailByCoverInfoComponentPartial",new {id=ViewBag.i})
+
+    <section class="section">
+        <div class="container">
+
+            <div class="row blog-entries element-animate">
+
+                <div class="col-md-12 col-lg-8 main-content">
+
+                    @await Component.InvokeAsync("BlogDetailByBlogContentComponentPartial", new { id = ViewBag.i })
+
+                    @await Component.InvokeAsync("BlogDetailCommentComponentPartial", new {id=ViewBag.i })
+
+                </div>
+
+                <div class="col-md-12 col-lg-4 sidebar">
+                    <div class="sidebar-box search-form-wrap">
+                        <form action="#" class="sidebar-search-form">
+                            <span class="bi-search"></span>
+                            <input type="text" class="form-control" id="s" placeholder="Aranacak kelimeyi giriniz...">
+                        </form>
+                    </div>
+
+                    @await Component.InvokeAsync("BlogDetailByWriterInfoComponentPartial", new {id=ViewBag.i})
+
+                    @await Component.InvokeAsync("BlogDetailOtherPostComponentPartial")
+
+                    @await Component.InvokeAsync("BlogDetailCategoryListComponentPartial")
+
+                    @await Component.InvokeAsync("BlogDetailTagsComponentPartial")
+
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    @await Component.InvokeAsync("BlogDetailOtherPostComponentPartial")
+
+    @await Component.InvokeAsync("_FooterComponentPartial")
+
+    @await Component.InvokeAsync("_ScriptComponentPartial")
+
+</body>
+</html>
+                                                                                                                                                                                                                                   

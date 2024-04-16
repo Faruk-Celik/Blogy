@@ -8,5 +8,12 @@ namespace Blogy.WebUI.Controllers
         {
             return View();
         }
+        public IActionResult BlogDetail (int id)
+        {
+            ViewBag.i = id;
+            return View();
+        }
+
+
     }
 }

@@ -22,4 +22,9 @@
     <ProjectReference Include="..\Blogy.BusinessLayer\Blogy.BusinessLayer.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Areas\Writer\Data\" />
+    <Folder Include="Areas\Writer\Models\" />
+  </ItemGroup>
+
 </Project>

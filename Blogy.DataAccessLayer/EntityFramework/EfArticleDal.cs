@@ -1,6 +1,8 @@
 ﻿using Blogy.DataAccessLayer.Abstract;
+using Blogy.DataAccessLayer.Context;
 using Blogy.DataAccessLayer.Repository;
 using Blogy.EntityLayer.Concrete;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +11,25 @@ using System.Threading.Tasks;
 
 namespace Blogy.DataAccessLayer.EntityFramework
 {
-    internal class EfArticleDal: GenericRepository<Article>,IArticleDal
+    public class EfArticleDal: GenericRepository<Article>,IArticleDal
     {
+        BlogyContext context = new BlogyContext();
+
+        public List<Article> GetArticleByWriter ( int id )
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Article> GetArticleWithWriter()
+        {
+			var values=context.Articles.Include(x=>x.Writer).ToList();
+            return values;
+		}
+
+        public Writer GetWriterInfoByArticleWriter(int id)
+        {
+            var values = context.Articles.Where(x => x.ArticleId == id).Select(y => y.Writer).FirstOrDefault();
+            return values;
+        }
     }
 }

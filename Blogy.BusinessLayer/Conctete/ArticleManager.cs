@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Blogy.BusinessLayer.Conctete
 {
-    internal class ArticleManager : IArticleService
+    public class ArticleManager : IArticleService
     {
         private readonly IArticleDal _articleDal;
 
@@ -64,6 +64,18 @@ namespace Blogy.BusinessLayer.Conctete
             {
                 //Error message
             }
+        }
+
+		
+
+        public Writer TGetWriterInfoByArticleWriter ( int id )
+        {
+            return _articleDal.GetWriterInfoByArticleWriter(id);
+        }
+
+        public List<Article> TGetArticleWithWriter ()
+        {
+            return _articleDal.GetArticleWithWriter();
         }
     }
 }
