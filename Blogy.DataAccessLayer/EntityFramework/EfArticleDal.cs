@@ -15,9 +15,14 @@ namespace Blogy.DataAccessLayer.EntityFramework
     {
         BlogyContext context = new BlogyContext();
 
+        
+
         public List<Article> GetArticleByWriter ( int id )
         {
-            throw new NotImplementedException();
+            var values = context.Articles.Where(x => x.AppUserId == id).ToList();
+
+
+            return values;
         }
 
         public List<Article> GetArticleWithWriter()

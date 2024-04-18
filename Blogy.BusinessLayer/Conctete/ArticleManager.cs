@@ -44,26 +44,12 @@ namespace Blogy.BusinessLayer.Conctete
 
         public void TInsert ( Article entity )
         {
-            if (entity.Title!=null && entity.Description.Length>50 && entity.CategoryId>=0)
-            {
-                _articleDal.Insert(entity);
-            }
-            else
-            {
-                //Error message
-            }
+            _articleDal.Insert(entity);
         }
 
         public void TUpdate ( Article entity )
         {
-            if (entity.Title != null && entity.Description.Length > 50 && entity.CategoryId >= 0)
-            {
-                _articleDal.Insert(entity);
-            }
-            else
-            {
-                //Error message
-            }
+            _articleDal.Insert(entity);
         }
 
 		
@@ -76,6 +62,11 @@ namespace Blogy.BusinessLayer.Conctete
         public List<Article> TGetArticleWithWriter ()
         {
             return _articleDal.GetArticleWithWriter();
+        }
+
+        public List<Article> TGetArticleByWriter ( int id )
+        {
+            return _articleDal.GetArticleByWriter(id);
         }
     }
 }
